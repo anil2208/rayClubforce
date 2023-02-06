@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form [formGroup]="postForm" (ngSubmit)="save()" data-form="course-form">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" data-field="title" class="form-control" formControlName="title" maxlength="100">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea rows="10" data-field="body" class="form-control" formControlName="body"
+                    maxlength="250"></textarea>
+            </div>
+            <p class="form-btn">
+                <a routerLink="/list" class="btn btn-default" data-btn="cancel-course-btn" role="button">Cancel</a>
+                <button type="submit" [disabled]="postForm.invalid" class="btn btn-primary"
+                    data-btn="save-course-btn">Save</button>
+            </p>
+        </form>
+    </div>
+</div>
